@@ -150,6 +150,14 @@
                 $(this).toggleClass("hu-menu-visdec");
             });
         </script>
+         <script>
+            $(document).ready(function() {
+                // show the alert
+                $(".alert").fadeTo(3000, 500).slideUp(500, function() {
+                    $(".alert").alert('close');
+                });
+            });
+        </script>
         {{-- <script>
             $(function() {
                 $("#toggle_pwd").click(function() {

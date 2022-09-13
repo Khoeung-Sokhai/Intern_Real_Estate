@@ -35,6 +35,11 @@
                 <h3 class="card-title">Address</h3>
                 
             </div>
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
             <div class="card-body p-0">
                 <table id="example2" class="table table-bordered table-hover table-striped projects">
                     <thead>
@@ -65,10 +70,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php{{ $number = $contacts->firstItem()}};?>
                         @foreach ($contacts as $key => $contact)
                             <tr>
                                 <td>
-                                    {{$contact->id}}
+                                    {{$number++}}
                                 </td>
                                 <td class="text-center">
                                     <a>
@@ -114,11 +120,7 @@
                                         <div class="project-actions text-center">
                                             <form action="{{ route('contacts.destroy', $contact->id) }}"
                                                 method="POST">
-                                                <a href="{{ route('contacts.show', $contact->id) }}"
-                                                    class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
-                                                    title="View">
-                                                    <i class="fas fa-folder"></i> View
-                                                </a>
+                                                
                                                 <a href="{{ route('contacts.edit', $contact->id) }}"
                                                     class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
                                                     title="Edit">

@@ -70,10 +70,11 @@
                         </tr>
                     </thead>
                     <tbody id="myTable">
+                        <?php{{ $number = $contacts->firstItem()}};?>
                         @foreach ($contacts as $key => $contact)
                             <tr>
                                 <td>
-                                    {{  $key+$contacts->firstItem() }}
+                                    {{  $number++ }}
                                 </td>
                                 <td class="text-center">
                                     <a>

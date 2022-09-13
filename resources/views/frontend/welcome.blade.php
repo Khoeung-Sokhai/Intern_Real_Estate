@@ -5,6 +5,11 @@
     <div id="wrapper">
         <!-- START SECTION HEADINGS -->
         <div class="clearfix"></div>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
         <!-- Header Container / End -->
         <!-- STAR HEADER IMAGE -->
         <section class="header-image home-18 d-flex align-items-center" id="slider">
@@ -202,12 +207,12 @@
                                 <div class="project-single">
                                     <div class="project-inner project-head">
                                         <div class="project-bottom">
-                                            <h4><a href="{{ route('detail.show', $property->id)}}" >View Property</a><span
+                                            <h4><a href="{{ route('detailrent.show', $property->id)}}" >View Property</a><span
                                                     class="category">Real Estate</span></h4>
                                         </div>
                                         <div class="homes">
                                             <!-- homes img -->
-                                            <a href="{{ route('detail.show', $property->id)}}" class="homes-img">
+                                            <a href="{{ route('detailrent.show', $property->id)}}" class="homes-img">
                                                 <div class="homes-tag button alt featured">Featured</div>
                                                 <div class="homes-tag button sale rent">For Rent</div>
                                                 <div class="homes-price">Family Home</div>

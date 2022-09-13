@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\ContactAgent;
 
-class DetailController extends Controller
+class DetailRentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class DetailController extends Controller
     public function index()
     {
         $properties = Property::all();
-        return view('frontend.detail',compact('properties'));
+        return view('frontend.detailrent',compact('properties'));
     }
 
     /**
@@ -63,7 +63,7 @@ class DetailController extends Controller
     public function show($id)
     {
         $data=Property::find($id);
-        return view('frontend.detail',compact('data'));
+        return view('frontend.detailrent',compact('data'));
     }
 
     /**

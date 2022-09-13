@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\agent;
 use App\Http\Controllers\Controller;
 
-use App\Models\Contact;
-use Illuminate\Http\Request;
+use App\Models\ContactAgent;
 
-class ContactController extends Controller
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class ContactAgentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::paginate(7);
+        $contacts = ContactAgent::where('agent_id','=', Auth::user()->id)->paginate(6);
+
         return view('agent.contacts.index',compact('contacts'));
     }
 
@@ -44,7 +47,7 @@ class ContactController extends Controller
             'message' => 'required'
         ]);
     
-        Contact::create($request->all());
+        ContactAgent::create($request->all());
      
         return redirect()->route('contacts.index')
                         ->with('success','Contact created successfully!');
@@ -56,9 +59,9 @@ class ContactController extends Controller
      * @param  \App\Models\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(ContactAgent $contactAgent)
     {
-        return view('agent.contacts.show',compact('contact'));
+        return view('agent.contacts.show',compact('contactAgent'));
 
     }
 
@@ -68,7 +71,7 @@ class ContactController extends Controller
      * @param  \App\Models\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(ContactAgent $contact)
     {
         return view('agent.contacts.edit',compact('contact'));
     }
@@ -80,7 +83,7 @@ class ContactController extends Controller
      * @param  \App\Models\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, ContactAgent $contactAgent)
     {
         $request->validate([
             'name' => 'required',
@@ -89,7 +92,7 @@ class ContactController extends Controller
             'message' => 'required'
         ]);
     
-        $contact->update($request->all());
+        $contactAgent->update($request->all());
     
         return redirect()->route('contacts.index')
                         ->with('success','Contact updated successfully');
@@ -101,7 +104,7 @@ class ContactController extends Controller
      * @param  \App\Models\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(ContactAgent $contact)
     {
         $contact->delete();
     

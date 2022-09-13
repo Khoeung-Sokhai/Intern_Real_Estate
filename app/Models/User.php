@@ -36,6 +36,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Property::class);
     }
+
+    public function contactAgents()
+    {
+        return $this->hasMany(ContactAgent::class);
+    }
   
     /**
      * The attributes that should be hidden for serialization.

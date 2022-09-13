@@ -78,7 +78,7 @@
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            @php $i=1; @endphp
+                            <?php{{ $number = $properties->firstItem()}};?>
                             
                             @foreach ($properties as $key =>$property)
                             @if($property->types == ["Rental"] || $property->types == ["Sale", "Rental"] || $property->types == ["Rent", "Rental"] || $property->types == ["Sale","Rent","Rental"] )
@@ -86,7 +86,7 @@
                                     <td class="text-center">
                                         <a>
                                             
-                                            {{$key+$properties->firstItem()}}
+                                            {{$number++}}
                                             
                                         </a>
                                     </td>

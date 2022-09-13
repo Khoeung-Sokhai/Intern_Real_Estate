@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Room;
 use App\Models\Property;
 use App\Models\ContactAdmin;
-use App\Models\Contact;
+use App\Models\ContactAgent;
 use Illuminate\Support\Facades\Auth;
 
  
@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     {
         $property = Property::get()->count();             
-        $room = Room::get()->count();             
+                   
         return view('frontend.welcome',compact('property','room'));
     } 
   
@@ -47,7 +47,7 @@ class HomeController extends Controller
         // dd('12345');
 
         $user = User::get()->count();
-        $agent = User::where('type','=','manager')->count();
+        $agent = User::where('type','=',2)->count();
         $contact = ContactAdmin::get()->count();
         $property = Property::get()->count();
        
@@ -66,8 +66,9 @@ class HomeController extends Controller
         $users = User::where('type','=','user')->count();
 
         $property = Property::where('agent_id','=', Auth::user()->id)->get()->count();
+        $contact = ContactAgent::where('agent_id','=', Auth::user()->id)->get()->count();
 
-        $contact = Contact::get()->count();
+       
 
         return view('agent.layouts.dashboard',compact('users','property','contact'));
     }

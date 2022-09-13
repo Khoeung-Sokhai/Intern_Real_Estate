@@ -1,9 +1,11 @@
+
 @extends('layouts.layout')
 @section('content')
-
+@if (Auth::check())
     <body class="inner-pages sin-1 homepage-4 hd-white">
         <!-- Wrapper -->
         <div id="wrapper">
+            
             <div class="clearfix"></div>
             <!-- Header Container / End -->
             <!-- END SECTION HEADINGS -->
@@ -18,25 +20,34 @@
                                     <section class="headings-2 pt-0">
                                         <div class="pro-wrapper">
                                             <div class="detail-wrapper-body">
-                                                <div class="listing-title-bar">
+                                                <div class="listing-title-bar ">
 
-                                                    <h3>Luxury Villa House <span class="mrg-l-5 category-tag">For
-                                                            Sale</span></h3>
-                                                    <div class="mt-0">
+                                                    <h3>{{ $data->name }} 
+                                                    
+                                                    <span class="mrg-l-5 category-tag">  
+                                                       For Rent
+                                                    </span>
+                                                  
+                                                    </h3>
+                                                    <div class="mt-1">
                                                         <a href="#listing-location" class="listing-address">
-                                                            <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77
-                                                            - Central Park South, NYC
+                                                            <i
+                                                                class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>{{ $data->address }}
                                                         </a>
+                                                        
                                                     </div>
+                                                    
                                                 </div>
+                                                
                                             </div>
+                                            
                                             <div class="single detail-wrapper mr-2">
                                                 <div class="detail-wrapper-body">
                                                     <div class="listing-title-bar">
-                                                        <h4>$ 230,000</h4>
+                                                        <h4>$ {{ $data->price_rent }}</h4>
                                                         <div class="mt-0">
                                                             <a href="#listing-location" class="listing-address">
-                                                                <p>$ 1,200 / sq ft</p>
+                                                                <p>{{ $data->size }} sq ft</p>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -49,30 +60,22 @@
                                         <h5 class="mb-4">Gallery</h5>
                                         <div class="carousel-inner">
                                             <div class="active item carousel-item" data-slide-number="0">
-                                                <img src="images/single-property/s-1.jpg" class="img-fluid"
-                                                    alt="slider-listing">
+                                                <img src="{{ asset('/cover/' . $data->cover) }}" class="img-fluid"
+                                                    alt="listing-small" style="width:1000px; height:500px">
                                             </div>
-                                            <div class="item carousel-item" data-slide-number="1">
-                                                <img src="images/single-property/s-2.jpg" class="img-fluid"
-                                                    alt="slider-listing">
-                                            </div>
-                                            <div class="item carousel-item" data-slide-number="2">
-                                                <img src="images/single-property/s-3.jpg" class="img-fluid"
-                                                    alt="slider-listing">
-                                            </div>
-                                            <div class="item carousel-item" data-slide-number="4">
-                                                <img src="images/single-property/s-4.jpg" class="img-fluid"
-                                                    alt="slider-listing">
-                                            </div>
-                                            <div class="item carousel-item" data-slide-number="5">
-                                                <img src="images/single-property/s-5.jpg" class="img-fluid"
-                                                    alt="slider-listing">
-                                            </div>
+                                            @foreach ($data->images as $key => $img)
+                                                <div class=" item carousel-item" data-slide-number="{{ ++$key }}">
 
-                                            <a class="carousel-control left" href="#listingDetailsSlider"
-                                                data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                                            <a class="carousel-control right" href="#listingDetailsSlider"
-                                                data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+
+                                                    <img src="{{ asset('/images/' . $img->image) }}"
+                                                        style="width:1000px; height:500px" class="img-fluid"
+                                                        alt="listing-small">
+
+
+                                                </div>
+                                            @endforeach
+
 
                                         </div>
                                         <!-- main slider carousel nav controls -->
@@ -80,58 +83,34 @@
                                             <li class="list-inline-item active">
                                                 <a id="carousel-selector-0" class="selected" data-slide-to="0"
                                                     data-target="#listingDetailsSlider">
-                                                    <img src="images/single-property/s-1.jpg" class="img-fluid"
+                                                    <img src="{{ asset('/cover/' . $data->cover) }}"
+                                                        style="width:200px; height:120px" class="img-fluid"
                                                         alt="listing-small">
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a id="carousel-selector-1" data-slide-to="1"
-                                                    data-target="#listingDetailsSlider">
-                                                    <img src="images/single-property/s-2.jpg" class="img-fluid"
-                                                        alt="listing-small">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a id="carousel-selector-2" data-slide-to="2"
-                                                    data-target="#listingDetailsSlider">
-                                                    <img src="images/single-property/s-3.jpg" class="img-fluid"
-                                                        alt="listing-small">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a id="carousel-selector-3" data-slide-to="3"
-                                                    data-target="#listingDetailsSlider">
-                                                    <img src="images/single-property/s-4.jpg" class="img-fluid"
-                                                        alt="listing-small">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a id="carousel-selector-4" data-slide-to="4"
-                                                    data-target="#listingDetailsSlider">
-                                                    <img src="images/single-property/s-5.jpg" class="img-fluid"
-                                                        alt="listing-small">
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            @foreach ($data->images as $key => $img)
+                                                <li class="list-inline-item ">
+                                                    <a id="carousel-selector-{{ $key + 2 }}" class="selected"
+                                                        data-slide-to="{{ ++$key }}"
+                                                        data-target="#listingDetailsSlider">
+
+                                                        <img src="{{ asset('/images/' . $img->image) }}"
+                                                            style="width:200px; height:120px" class="img-fluid"
+                                                            alt="listing-small">
+
+                                                    </a>
+                                                </li>
+                                            @endforeach
+
+                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider"
+                                            data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i
+                                                class="fa fa-angle-right"></i></a>
                                         <!-- main slider carousel items -->
                                     </div>
                                     <div class="blog-info details mb-30">
                                         <h5 class="mb-4">Description</h5>
-                                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
-                                            rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi
-                                            esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum
-                                            dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur,
-                                            totam fugit.</p>
-                                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
-                                            rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi
-                                            esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum
-                                            dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur,
-                                            totam fugit.</p>
-                                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
-                                            rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi
-                                            esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum
-                                            dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur,
-                                            totam fugit.</p>
+                                        <p class="mb-3">{{ $data->description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,82 +119,54 @@
                                 <h5 class="mb-4">Property Details</h5>
                                 <ul class="homes-list clearfix">
                                     <li>
-                                        <span class="font-weight-bold mr-1">Property ID:</span>
-                                        <span class="det">V254680</span>
+                                        <span class="font-weight-bold mr-1">Property ID:</span> 
+                                   
+                                      <span class="det">{{ $data->id }}</span> 
                                     </li>
                                     <li>
-                                        <span class="font-weight-bold mr-1">Property Type:</span>
-                                        <span class="det">House</span>
-                                    </li>
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Property status:</span>
-                                        <span class="det">For Sale</span>
-                                    </li>
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Property Price:</span>
-                                        <span class="det">$230,000</span>
+                                        <span class="font-weight-bold mr-1">Price For Rent:</span> 
+                                   
+                                      <span class="det">${{ $data->price_rent }}</span> 
                                     </li>
                                     <li>
                                         <span class="font-weight-bold mr-1">Rooms:</span>
-                                        <span class="det">6</span>
+                                        <span class="det">{{ $data->bedroom }}</span>
                                     </li>
                                     <li>
                                         <span class="font-weight-bold mr-1">Bedrooms:</span>
-                                        <span class="det">7</span>
+                                        <span class="det">{{ $data->bedroom }}</span>
                                     </li>
                                     <li>
                                         <span class="font-weight-bold mr-1">Bath:</span>
-                                        <span class="det">4</span>
+                                        <span class="det">{{ $data->bathroom }}</span>
                                     </li>
                                     <li>
-                                        <span class="font-weight-bold mr-1">Garages:</span>
-                                        <span class="det">2</span>
+                                        <span class="font-weight-bold mr-1">Size:</span>
+                                        <span class="det">{{ $data->size }} </span>
                                     </li>
+                                    
                                     <li>
                                         <span class="font-weight-bold mr-1">Year Built:</span>
-                                        <span class="det">10/6/2020</span>
+                                        <span class="det">{{ $data->created_at->todatestring() }}</span>
+                                    </li>
+                                    <li>
+                                        <span class="font-weight-bold mr-1">Property status:</span>
+                                        <span class="det">
+                                            @foreach($data->types as $type)
+                                                        {{ $type }}
+                                            @endforeach
+                                        </span>
                                     </li>
                                 </ul>
                                 <!-- title -->
                                 <h5 class="mt-5">Amenities</h5>
                                 <!-- cars List -->
                                 <ul class="homes-list clearfix">
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Air Cond</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Balcony</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Internet</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Dishwasher</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Bedding</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Cable TV</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Parking</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Pool</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                                        <span>Fridge</span>
-                                    </li>
+                                   
+                                        {{-- <i class="fa fa-check-square" aria-hidden="true"></i> --}}
+                                        
+                                        <span>{{ $data->amenity }}</span>
+                                 
                                 </ul>
                             </div>
 
@@ -240,26 +191,25 @@
                                         <div class="widget-boxed-body">
                                             <div class="sidebar-widget author-widget2">
                                                 <div class="author-box clearfix">
-                                                    <img src="images/testimonials/ts-1.jpg" alt="author-image"
-                                                        class="author__img">
-                                                    <h4 class="author__title">Lisa Clark</h4>
+                                                    <img src="/profiles/avatars/{{ $data->agent->avatar }}"
+                                                        alt="author-image" class="author__img">
+                                                    <h4 class="author__title">{{ $data->agent->name }}</h4>
                                                     <p class="author__meta">Agent of Property</p>
+            
+                                                    
                                                 </div>
                                                 <ul class="author__contact">
-                                                    <li><span class="la la-map-marker"><i
-                                                                class="fa fa-map-marker"></i></span>302 Av Park, New York
-                                                    </li>
+                                                    
                                                     <li><span class="la la-phone"><i class="fa fa-phone"
-                                                                aria-hidden="true"></i></span><a href="#">(234) 0200
-                                                            17813</a></li>
+                                                                aria-hidden="true"></i></span><a href="#">+855 {{ $data->agent->phone }}</a></li>
                                                     <li><span class="la la-envelope-o"><i class="fa fa-envelope"
                                                                 aria-hidden="true"></i></span><a
-                                                            href="#">lisa@gmail.com</a></li>
+                                                            href="#">{{ $data->agent->email }}</a></li>
                                                 </ul>
                                                 <div class="agent-contact-form-sidebar">
                                                     <h4>Request Inquiry</h4>
                                                     <form id="contactform" class="contact-form"
-                                                        action="{{ route('contact.store') }}" name="contactform"
+                                                        action="{{ route('detail.store', $data->agent->id ) }}" name="contactform"
                                                         method="post" novalidate>
                                                         @csrf
                                                         <div id="success" class="successform">
@@ -271,6 +221,18 @@
                                                             <p>Something went wrong, try refreshing and submitting the form
                                                                 again.</p>
                                                         </div>
+                                                       
+                                                        
+                                                    
+                                                        
+                                                        @auth()
+                                                        <div class="form-group">
+                                                            <input type="text" hidden value="{{ Auth::user()->id }}"
+                                                                class="form-control input-custom input-full"
+                                                                name="agent_id" placeholder="Name">
+                                                        </div>
+                                                        @endauth
+                                                        
                                                         <div class="form-group">
                                                             <input type="text" required
                                                                 class="form-control input-custom input-full"
@@ -310,8 +272,9 @@
             </section>
             <!-- END SECTION PROPERTIES LISTING -->
 
-
-
+            @else
+            @include('auth.login')
+           
             <!--register form -->
 
             <!--register form end -->
@@ -367,7 +330,8 @@
         </div>
         <!-- Wrapper / End -->
     </body>
-
+@endif
 
     <!-- Mirrored from code-theme.com/html/findhouses/single-property-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 08:55:08 GMT -->
 @endsection
+

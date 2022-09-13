@@ -9,6 +9,11 @@
                 <div class="col-lg-4 col-md-6 col-xs-6 widget-boxed mt-33 mt-0 offset-lg-2 offset-md-3">
                     <div class="sidebar-widget author-widget2">
                         <div class="agent-contact-form-sidebar">
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @endif
                             {{-- <form  method="post" action="functions.php"> --}}
                             <form name="contact_form" action="{{ route('update-password') }}" id="change_password_form"
                                 method="post">
@@ -24,9 +29,12 @@
                                 @endif
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" name="old_password" id="old_password" class="form-control @error('old_password') is-invalid @enderror" placeholder="Old Password" autocomplete="off"/>
+                                        <input type="password" name="old_password" id="old_password"
+                                            class="form-control @error('old_password') is-invalid @enderror"
+                                            placeholder="Old Password" autocomplete="off" />
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_current" onclick="showPassword('old_password')"></i></span>
+                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_current"
+                                                    onclick="showPassword('old_password')"></i></span>
                                             @error('old_password')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -35,23 +43,30 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group" id="show_hide_password">
-                                        <input type="password"  name="new_password" id="new_password" class="form-control @error('new_password') is-invalid @enderror" placeholder="New Password" autocomplete="off"/>
+                                        <input type="password" name="new_password" id="new_password"
+                                            class="form-control @error('new_password') is-invalid @enderror"
+                                            placeholder="New Password" autocomplete="off" />
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_1" onclick="showPassword('new_password')"></i></span>
-                                                @error('old_password')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
+                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_1"
+                                                    onclick="showPassword('new_password')"></i></span>
+                                            @error('old_password')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group" id="show_hide_password">
-                                        <input type="password" name="new_password_confirmation" id="new_password_confirmation" class="form-control @error('new_password') is-invalid @enderror" placeholder="Confirm Password" autocomplete="off" />
+                                        <input type="password" name="new_password_confirmation"
+                                            id="new_password_confirmation"
+                                            class="form-control @error('new_password') is-invalid @enderror"
+                                            placeholder="Confirm Password" autocomplete="off" />
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_2" onclick="showPassword('new_password_confirmation')" ></i></span>
-                                                @error('confirm_password')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
+                                            <span class="input-group-text"><i class="bi bi-eye-slash" id="togglePw_2"
+                                                    onclick="showPassword('new_password_confirmation')"></i></span>
+                                            @error('confirm_password')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +84,7 @@
                 x.type = "text";
             } else {
                 x.type = "password";
-              
+
             }
 
             var y = document.getElementById("new_password");
@@ -77,7 +92,7 @@
                 y.type = "text";
             } else {
                 y.type = "password";
-          
+
             }
 
             var z = document.getElementById("new_password_confirmation");
@@ -88,6 +103,7 @@
             }
 
         }
+
         function showPassword(targetID) {
             var x = document.getElementById(targetID);
 
@@ -95,10 +111,10 @@
                 x.type = "text";
             } else {
                 x.type = "password";
-        
+
             }
 
-        }   
+        }
         //var clicked = 0;
 
         //   $(".toggle-password").click(function (e) {
@@ -132,7 +148,7 @@
         //     pInput.type = "password";
         // });
         // });
-        
+
         // const togglePassword = document.querySelector('#togglePassword');
         // const password = document.querySelector('#password');
         // togglePassword.addEventListener('click', function (e) {
@@ -142,7 +158,6 @@
         //     // toggle the eye / eye slash icon
         //     this.classList.toggle('bi-eye');
         // });
-
     </script>
     <!-- END SECTION USER PROFILE -->
 @endsection

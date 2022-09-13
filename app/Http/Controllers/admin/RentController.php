@@ -18,7 +18,7 @@ class RentController extends Controller
      */
     public function index()
     {
-        $properties = Property::orderByDesc('id')->orderBy('id')->paginate(6);
+        $properties = Property::whereJsonContains('types', ['Rent'])->paginate(6);
         return view('backend.types.rents.index', compact('properties'))->with('properties', $properties);
     }
 

@@ -71,14 +71,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php{{ $number = $users->firstItem()}};?>
                             @foreach ($users as $key => $user)
                             @if($user->type == 'manager')
 
                             
                             <tr>
                                 <td>
-                                    {{ $user->id}}.
+                                    {{ $number++}}.
                                 </td>
                                 <td class="text-center">
                                     <a>
@@ -200,7 +200,7 @@
                             
                             <tr>
                                 <td>
-                                    {{ $user->id}}.
+                                    {{ $number++}}.
                                 </td>
                                 <td class="text-center">
                                     <a>

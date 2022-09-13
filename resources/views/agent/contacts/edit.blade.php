@@ -12,19 +12,19 @@
             @method('PUT')
             <div class="card-body">
                 <div class="form-group">
-                    <label for="name">Edit name</label>
+                    <label for="name">Name</label>
                     <input type="text" class="form-control" name="name" value="{{$contact->name}}" id="exampleInputName1" placeholder="Enter name">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Edit District</label>
+                    <label for="phone">Cell Phone</label>
                     <input type="text" class="form-control"name="phone"  value="{{$contact->phone}}" id="exampleInputName1" placeholder="Enter phone">
                 </div>
                 <div class="form-group">
-                    <label for="email">Edit City</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" value="{{$contact->email}}" id="exampleInputName1" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                    <label for="message">Edit message</label>
+                    <label for="message">Message</label>
                     <input type="text" class="form-control" name="message" value="{{$contact->message}}" id="exampleInputName1" placeholder="Enter message">
                 </div>
                 

@@ -77,7 +77,7 @@
                                 <div class="project-inner project-head">
                                     <div class="homes">
                                         <!-- homes img -->
-                                        <a href="{{ route('detail.show', $property->id)}}" class="homes-img">
+                                        <a href="{{ route('detailrental.show', $property->id)}}" class="homes-img">
                                             <div class="homes-tag button alt featured">Featured</div>
                                             <div class="homes-tag button alt sale">Rental</div>
                                             <div class="homes-price">${{$property->price_rental}}.00/month</div>
@@ -90,9 +90,9 @@
                                 <!-- homes content -->
                                 <div class="homes-content">
                                     <!-- homes address -->
-                                    <h3><a href="{{ route('detail.show', $property->id)}}">{{$property->name}}</a></h3>
+                                    <h3><a href="{{ route('detailrental.show', $property->id)}}">{{$property->name}}</a></h3>
                                     <p class="homes-address mb-3">
-                                        <a href="{{ route('detail.show', $property->id)}}">
+                                        <a href="{{ route('detailrental.show', $property->id)}}">
                                             <i class="fa fa-map-marker"></i><span>{{$property->address}}</span>
                                         </a>
                                     </p>

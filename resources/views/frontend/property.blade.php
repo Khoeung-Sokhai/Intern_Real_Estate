@@ -12,7 +12,7 @@
             <div class="text-heading text-center">
                 <div class="container">
                     <h1>Contact Us</h1>
-                    <h2><a href="index.html">Home </a> &nbsp;/&nbsp; Contact Us</h2>
+                    <h2><a href="/">Home </a> &nbsp;/&nbsp; Contact Us</h2>
                 </div>
             </div>
         </section>
@@ -26,7 +26,7 @@
                         <div class="detail-wrapper-body">
                             <div class="listing-title-bar">
                                 <div class="text-heading text-left">
-                                    <p><a href="index.html">Home </a> &nbsp;/&nbsp; <span>Listings</span></p>
+                                    <p><a href="/">Home </a> &nbsp;/&nbsp; <span>Listings</span></p>
                                 </div>
                                 <h3>Grid View</h3>
                             </div>
@@ -192,8 +192,8 @@
                                     <!-- homes img -->
                                     <a href="{{ route('detail.show', $property->id)}}" class="homes-img">
                                         <div class="homes-tag button alt featured">Featured</div>
-                                        <div class="homes-tag button alt sale">For Rent</div>
-                                        <div class="homes-price">${{$property->price_rent}}.00/month</div>
+                                        <div class="homes-tag button alt sale">Types</div>
+                                        <div class="homes-price">For Rent: ${{$property->price_rent}}.00/month</div>
                                         <div class="news-item-img">
                                             <img class="img-responsive" src="{{asset('/cover/' . $property->cover) }}" style="height:250px; width:1000px" alt="blog image" >
                                         </div>

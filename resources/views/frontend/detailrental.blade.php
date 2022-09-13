@@ -25,9 +25,9 @@
                                                     <h3>{{ $data->name }} 
                                                     
                                                     <span class="mrg-l-5 category-tag">  
-                                                       For Sale
+                                                       For Rental
                                                     </span>
-                                                    
+                                                  
                                                     </h3>
                                                     <div class="mt-1">
                                                         <a href="#listing-location" class="listing-address">
@@ -44,7 +44,7 @@
                                             <div class="single detail-wrapper mr-2">
                                                 <div class="detail-wrapper-body">
                                                     <div class="listing-title-bar">
-                                                        <h4>$ {{ $data->price_sale }}</h4>
+                                                        <h4>$ {{ $data->price_rental }}</h4>
                                                         <div class="mt-0">
                                                             <a href="#listing-location" class="listing-address">
                                                                 <p>{{ $data->size }} sq ft</p>
@@ -118,35 +118,16 @@
                                 <!-- title -->
                                 <h5 class="mb-4">Property Details</h5>
                                 <ul class="homes-list clearfix">
-                                    
-                                    {{-- @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Price For Rent:</span> 
-                                    
-                                        <span class="det">${{ $data->price_rent }}</span>
-                                    </li>
-                                    @endif
-
-                                    @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Price For Sale:</span> 
-                                       
-                                        <span class="det">${{ $data->price_sale }}</span>
-                                    </li> 
-                                    @endif --}}
-
-                                    {{-- @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"]) --}}
                                     <li>
                                         <span class="font-weight-bold mr-1">Property ID:</span> 
                                    
                                       <span class="det">{{ $data->id }}</span> 
                                     </li>
                                     <li>
-                                        <span class="font-weight-bold mr-1">Price For Sale:</span> 
+                                        <span class="font-weight-bold mr-1">Price For Rental:</span> 
                                    
-                                      <span class="det">${{ $data->price_sale }}</span> 
-                                    </li>    
-                                    
+                                      <span class="det">${{ $data->price_rental }}</span> 
+                                    </li>
                                    
 
                                     <li>

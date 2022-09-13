@@ -7,19 +7,29 @@
                 <div class="col-lg-2 col-md-12 col-xs-12 pl-0 pr-0 user-dash">
                 </div>
                 <div class="col-lg-4 col-md-6 col-xs-6 widget-boxed mt-33 mt-0 offset-lg-2 offset-md-3">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="sidebar-widget author-widget2">
+
                         <form action="{{ route('update_profile') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="author-box d-flex justify-content-center clearfix">
-                                    <input type="file" name="avatar" class="author__img" style="position: absolute; opacity: 0; cursor: pointer; z-index: 10" accept="avatar/*" onchange="loadFile(event)">
-                                    <img src="/profiles/avatars/{{ Auth::user()->avatar }}" alt="author-image" class="author__img" id="output">
+                                <input type="file" name="avatar" class="author__img"
+                                    style="position: absolute; opacity: 0; cursor: pointer; z-index: 10" accept="avatar/*"
+                                    onchange="loadFile(event)">
+                                <img src="/profiles/avatars/{{ Auth::user()->avatar }}" alt="author-image"
+                                    class="author__img" id="output">
                             </div>
                             <i class="bi bi-plus-circle-fill d-flex justify-content-center"
                                 style="margin-top: -10px; font-size:20px;"></i>
                             <div class="agent-contact-form-sidebar">
-                                <input type="text" name="name" value="{{ old('name') ? old('name') :Auth::user()->name }}"
-                                    class="form-control" id="name" placeholder="Enter Name">
+                                <input type="text" name="name"
+                                    value="{{ old('name') ? old('name') : Auth::user()->name }}" class="form-control"
+                                    id="name" placeholder="Enter Name">
                                 @if ($errors->any('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                 @endif

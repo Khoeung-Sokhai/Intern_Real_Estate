@@ -90,7 +90,7 @@
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
                                 <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="/property">Property</a>
+                                <li><a href="/mainproperty">Property</a>
                                     <ul>
                                         <li><a href="/propertyRent">For Rent</a></li>
                                         <li><a href="/propertySale">For Sale</a></li>
