@@ -110,18 +110,28 @@
                                     </td>
                                     <td class="text-center">
                                         <a>
-                                            ${{ $property->price_sale }}.00
+                                            ${{ $property->price_Sale }}.00
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        {{--  --}}@foreach($property->types as $type)
-                                        <span class="badge badge-success" style="font-size: 15px; " > 
-                                            
-                                            
+                                        {{--  --}}
+                                        @foreach($property->types as $type)
+                                        @if($type == 'Rent')
+                                        <span class="badge badge-success bg-warning" style="font-size: 15px; color:white; " > 
                                             {{ $type }}
+                                        </span>
+                                         @elseif($type == 'Sale')
+                                        <span class="badge badge-success bg-danger" style="font-size: 15px; color:white; " > 
+                                            {{ $type }}
+                                        </span>
+                                         @elseif($type == 'Rental')
+                                        <span class="badge badge-success bg-primary" style="font-size: 15px; color:white;" > 
+                                            {{ $type }}
+                                        </span>
+                                        @endif
                                             
                                            
-                                        </span>@endforeach
+                                        @endforeach
                                     </td>
                                     <td class="text-center">
                                         <img src="{{asset('/cover/' . $property->cover) }}" class="img-responsive" style="max-height:50px; max-width:80px" alt="" srcset="">

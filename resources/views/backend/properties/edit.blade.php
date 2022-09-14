@@ -84,7 +84,7 @@
                                 <label class="form-check-label" for="flexCheckChecked">For Sale</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_sale }}"
-                                name="price_sale" id="exampleInputName1" placeholder="Price">
+                                name="price_Sale" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check mb-1">
@@ -93,7 +93,7 @@
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_rent }}"
-                                name="price_rent" id="exampleInputName1" placeholder="Price">
+                                name="price_Rent" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check mb-1">
@@ -102,7 +102,7 @@
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_rental }}"
-                                name="price_rental" id="exampleInputName1" placeholder="Price">
+                                name="price_Rental" id="exampleInputName1" placeholder="Price">
                         </div>
                     </div>
                     <!-- select -->

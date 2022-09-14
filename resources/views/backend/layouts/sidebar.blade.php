@@ -66,7 +66,7 @@
                     <i class="nav-icon bi bi-code-square text-white"></i>
                     <p class="text-white">
                         Type Property
-                        <i class="right fas fa-angle-left text-white"></i>
+                        <i class="right fas fa-angle-left text-white mt-2"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">

@@ -44,7 +44,7 @@
                                             <div class="single detail-wrapper mr-2">
                                                 <div class="detail-wrapper-body">
                                                     <div class="listing-title-bar">
-                                                        <h4>$ {{ $data->price_rent }}</h4>
+                                                        <h4>$ {{ $data->price_Rent }}</h4>
                                                         <div class="mt-0">
                                                             <a href="#listing-location" class="listing-address">
                                                                 <p>{{ $data->size }} sq ft</p>
@@ -94,7 +94,7 @@
                                                         data-slide-to="{{ ++$key }}"
                                                         data-target="#listingDetailsSlider">
 
-                                                        <img src="{{ asset('/images/' . $img->image) }}"
+                                                        <img src="{{ asset('/property/' . $img->image) }}"
                                                             style="width:200px; height:120px" class="img-fluid"
                                                             alt="listing-small">
 
@@ -126,7 +126,7 @@
                                     <li>
                                         <span class="font-weight-bold mr-1">Price For Rent:</span> 
                                    
-                                      <span class="det">${{ $data->price_rent }}</span> 
+                                      <span class="det">${{ $data->price_Rent }}</span> 
                                     </li>
                                     <li>
                                         <span class="font-weight-bold mr-1">Rooms:</span>

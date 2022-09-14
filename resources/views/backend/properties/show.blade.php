@@ -71,7 +71,7 @@
                                         <li class="fa fa-map-marker"></li> {{ $property->address }}
                                     </div>
                                 </div>
-                                <div class="product-price-discount"><span>${{ $property->price_sale }}.00</span>
+                                <div class="product-price-discount"><span>${{ $property->price_Sale }}.00</span>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -152,6 +152,7 @@
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-primary" href="{{ route('properties.index') }}"> Back</a>
             </div>
         </div>
     </div>

@@ -53,7 +53,9 @@ class RentalController extends Controller
                 "bedroom" => $request->bedroom,
                 "bathroom" => $request->bathroom,
                 "size" => $request->size,
-                "price" => $request->price,
+                "price_Rent" => $request->price_Rent,
+                "price_Sale" => $request->price_Sale,
+                "price_Rental" => $request->price_Rental,
                 "cover" => $imageName,
                 "types" => $request->types,
                 
@@ -125,7 +127,9 @@ class RentalController extends Controller
             "bedroom" => $request->bedroom,
             "bathroom" => $request->bathroom,
             "size" => $request->size,
-            "price" => $request->price,
+            "price_Rent" => $request->price_Rent,
+            "price_Sale" => $request->price_Sale,
+            "price_Rental" => $request->price_Rental,
             "types" => $request->types,
             "cover" => $properties->cover,
         ]);

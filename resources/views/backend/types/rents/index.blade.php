@@ -110,7 +110,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a>
-                                            ${{ $property->price_rent }}.00
+                                            ${{ $property->price_Rent }}.00
                                         </a>
                                     </td>
                                     <td class="text-center">

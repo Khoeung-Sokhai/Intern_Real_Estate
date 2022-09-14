@@ -80,7 +80,7 @@
                                         <a href="{{ route('detailrent.show', $property->id)}}" class="homes-img">
                                             <div class="homes-tag button alt featured">Featured</div>
                                             <div class="homes-tag button alt sale">For Rent</div>
-                                            <div class="homes-price">${{$property->price_rent}}.00/month</div>
+                                            <div class="homes-price">${{$property->price_Rent}}.00/month</div>
                                             <div class="news-item-img">
                                                 <img class="img-responsive" src="{{asset('/cover/' . $property->cover) }}" style="height:250px; width:1000px" alt="blog image" >
                                             </div>

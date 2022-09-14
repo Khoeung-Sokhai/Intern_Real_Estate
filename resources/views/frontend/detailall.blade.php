@@ -22,13 +22,23 @@
                                             <div class="detail-wrapper-body">
                                                 <div class="listing-title-bar ">
 
-                                                    <h3>{{ $data->name }} 
-                                                    
-                                                    <span class="mrg-l-5 category-tag">  
-                                                       For Sale
-                                                    </span>
-                                                    
-                                                    </h3>
+                                                    <h3>{{ $data->name }}  </h3>
+                                                    @foreach($data->types as  $type)
+                                                    @if($type == 'Rent')
+                                                        <span class="mrg-l-5 category-tag bg-warning" style="font-size: 15px; color:white; ">  
+                                                            {{ $type }}
+                                                        </span>
+                                                    @elseif($type == 'Sale')
+                                                        <span class="mrg-l-5 category-tag bg-danger" style="font-size: 15px; color:white; " > 
+                                                            {{ $type }}
+                                                        </span>
+                                                    @elseif($type == 'Rental')
+                                                        <span class="mrg-l-5 category-tag bg-primary" style="font-size: 15px; color:white;" > 
+                                                            {{ $type }}
+                                                        </span>
+                                                    @endif
+                                                    @endforeach
+                                                   
                                                     <div class="mt-1">
                                                         <a href="#listing-location" class="listing-address">
                                                             <i
@@ -40,19 +50,36 @@
                                                 </div>
                                                 
                                             </div>
-                                            
                                             <div class="single detail-wrapper mr-2">
                                                 <div class="detail-wrapper-body">
                                                     <div class="listing-title-bar">
-                                                        <h4>$ {{ $data->price_Sale }}</h4>
-                                                        <div class="mt-0">
-                                                            <a href="#listing-location" class="listing-address">
-                                                                <p>{{ $data->size }} sq ft</p>
-                                                            </a>
-                                                        </div>
+                                                    <h3>
+                                                        @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
+                                                       
+                                                        <span class="mrg-l-5 category-tag bg-danger" style="font-size: 15px; color:white; " > 
+                                                            ${{ $data->price_Sale }}
+                                                        </span>
+                                                           
+                                                        @endif
+                                                        @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
+                                                        
+                                                        <span class="mrg-l-5 category-tag bg-warning" style="font-size: 15px; color:white; ">  
+                                                            ${{ $data->price_Rent }}
+                                                        </span>
+                                                        @endif
+                                                        @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])
+                                                      
+                                                        <span class="mrg-l-5 category-tag bg-primary" style="font-size: 15px; color:white;" > 
+                                                            ${{ $data->price_Rental }}
+                                                        </span>
+                                                        @endif
+                                                    
+                                                    </h3>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                            
                                         </div>
                                     </section>
                                     <!-- main slider carousel items -->
@@ -108,6 +135,64 @@
                                                 class="fa fa-angle-right"></i></a>
                                         <!-- main slider carousel items -->
                                     </div>
+                                    <div class="single homes-content details mb-30">
+                                        <!-- title -->
+                                        <h5 class="mb-4">Prices</h5>
+                                        <ul class="homes-list clearfix">
+                                            
+                                            @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
+                                            <li>
+                                                <span class="font-weight-bold mr-1">Price For Rent:</span> 
+                                            
+                                                <span class="det">${{ $data->price_Rent }}</span>
+                                            </li>
+                                            @endif
+        
+                                            @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
+                                            <li>
+                                                <span class="font-weight-bold mr-1">Price For Sale:</span> 
+                                               
+                                                <span class="det">${{ $data->price_Sale }}</span>
+                                            </li> 
+                                            @endif
+        
+                                            @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])
+                                            <li>
+                                                <span class="font-weight-bold mr-1">Price For Rental:</span> 
+                                               
+                                                <span class="det">${{ $data->price_Rental }}</span>
+                                            </li> 
+                                            @endif
+                                        </ul>
+                                        <!-- title -->
+                                        <h5 class="mt-5">Properties Type</h5>
+                                        <!-- cars List -->
+                                        <ul class="homes-list clearfix">
+                                            <span class="font-weight-bold mr-1">Price For Rental:</span> 
+                                               
+                                            
+                                                {{-- <i class="fa fa-check-square" aria-hidden="true"></i> --}}
+                                                @foreach($data->types as  $type)
+                                                @if($type == 'Rent')
+                                                <span class="badge badge-success bg-warning" style="font-size: 15px; color:white; " > 
+                                                    {{ $type }}
+                                                </span>
+                                                 @elseif($type == 'Sale')
+                                                <span class="badge badge-success bg-danger" style="font-size: 15px; color:white; " > 
+                                                    {{ $type }}
+                                                </span>
+                                                 @elseif($type == 'Rental')
+                                                <span class="badge badge-success bg-primary" style="font-size: 15px; color:white;" > 
+                                                    {{ $type }}
+                                                </span>
+                                                @endif
+                                                @endforeach
+                                               
+                                         
+                                        </ul>
+                                    </div>
+        
+                                
                                     <div class="blog-info details mb-30">
                                         <h5 class="mb-4">Description</h5>
                                         <p class="mb-3">{{ $data->description }}</p>
@@ -118,37 +203,6 @@
                                 <!-- title -->
                                 <h5 class="mb-4">Property Details</h5>
                                 <ul class="homes-list clearfix">
-                                    
-                                    {{-- @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Price For Rent:</span> 
-                                    
-                                        <span class="det">${{ $data->price_rent }}</span>
-                                    </li>
-                                    @endif
-
-                                    @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Price For Sale:</span> 
-                                       
-                                        <span class="det">${{ $data->price_sale }}</span>
-                                    </li> 
-                                    @endif --}}
-
-                                    {{-- @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"]) --}}
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Property ID:</span> 
-                                   
-                                      <span class="det">{{ $data->id }}</span> 
-                                    </li>
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Price For Sale:</span> 
-                                   
-                                      <span class="det">${{ $data->price_Sale }}</span> 
-                                    </li>    
-                                    
-                                   
-
                                     <li>
                                         <span class="font-weight-bold mr-1">Rooms:</span>
                                         <span class="det">{{ $data->bedroom }}</span>
@@ -170,14 +224,7 @@
                                         <span class="font-weight-bold mr-1">Year Built:</span>
                                         <span class="det">{{ $data->created_at->todatestring() }}</span>
                                     </li>
-                                    <li>
-                                        <span class="font-weight-bold mr-1">Property status:</span>
-                                        <span class="det">
-                                            @foreach($data->types as $type)
-                                                        {{ $type }}
-                                            @endforeach
-                                        </span>
-                                    </li>
+                                   
                                 </ul>
                                 <!-- title -->
                                 <h5 class="mt-5">Amenities</h5>

@@ -17,9 +17,9 @@ class Property extends Model
         'bedroom',
         'bathroom',
         'size',
-        'price_sale',
-        'price_rent',
-        'price_rental',
+        'price_Sale',
+        'price_Rent',
+        'price_Rental',
         'cover',
         'description',
         'agent_id',
@@ -30,6 +30,7 @@ class Property extends Model
     protected $casts=[
         'types'=>'array',
     ];
+    
     public function images(){
         return $this->hasMany(Image::class);
     }

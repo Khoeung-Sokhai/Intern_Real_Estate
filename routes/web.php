@@ -22,6 +22,7 @@ use App\Http\Controllers\frontend\ContactUsController;
 use App\Http\Controllers\frontend\DetailController;
 use App\Http\Controllers\frontend\DetailRentController;
 use App\Http\Controllers\frontend\DetailRentalController;
+use App\Http\Controllers\frontend\DetailAllController;
 use App\Http\Controllers\frontend\AgentController;
 use App\Http\Controllers\frontend\ForRentController;
 use App\Http\Controllers\frontend\ForRentalController;
@@ -75,6 +76,7 @@ Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.st
 Route::resource('/detail', DetailController::class);
 Route::resource('/detailrent', DetailRentController::class);
 Route::resource('/detailrental', DetailRentalController::class);
+Route::resource('/detailall', DetailAllController::class);
 
 Route::resource('/agent', AgentController::class);
 Route::resource('/propertyRent', ForRentController::class);
