@@ -42,13 +42,47 @@
                         </a>
                     </li> --}}
                     <li class="nav-item">
-                        <a href="/manager/posts" style="color:#fff" class="nav-link">
-                          <i class="nav-icon bi bi-people"></i>
-                          <p>
-                            Post Property
-                          </p>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon bi bi-code-square text-white"></i>
+                            <p class="text-white">
+                                Type Property
+                                <i class="right fas fa-angle-left text-white mt-2"></i>
+                            </p>
                         </a>
-                      </li>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/manager/posts" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-white"></i>
+                                    <p class="text-white">
+                                        All Property
+                
+                                    </p>
+                
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/manager/rents" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-white"></i>
+                                    <p class="text-white">For Rent</p>
+                                </a>
+                            </li>
+        
+        
+                            <li class="nav-item">
+                                <a href="/manager/sales" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-white"></i>
+                                    <p class="text-white">For Sale</p>
+                                </a>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a href="/manager/rentals" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-white"></i>
+                                    <p class="text-white">Vacation Rental</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="/manager/contacts" style="color:#fff" class="nav-link">
                             <i class="nav-icon bi bi-envelope"></i>

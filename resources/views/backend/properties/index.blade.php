@@ -56,9 +56,7 @@
                                 <th class="text-center">
                                     Address
                                 </th>
-                                <th class="text-center">
-                                    Prices
-                                </th>
+                                
                                 <th class="text-center">
                                     Types
                                 </th>
@@ -108,11 +106,7 @@
                                             {{ $property->address }}
                                         </a>
                                     </td>
-                                    <td class="text-center">
-                                        <a>
-                                            ${{ $property->price_Sale }}.00
-                                        </a>
-                                    </td>
+                                   
                                     <td class="text-center">
                                         {{--  --}}
                                         @foreach($property->types as $type)

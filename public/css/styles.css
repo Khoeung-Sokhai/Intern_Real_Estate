@@ -2773,6 +2773,7 @@ section.portfolio {
 .portfolio .homes-tag.featured {
     left: 15px;
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 .portfolio .homes-price,
@@ -2783,8 +2784,9 @@ section.portfolio {
 
 .portfolio .homes-tag.sale {
     background: #e54242 !important;
-    width: 84px !important;
+    width: 130px !important;
     height: 31px;
+    border-radius: 5px;
 }
 
 .portfolio .homes-tag.sale {
@@ -16434,7 +16436,7 @@ section.headings-2 {
     color: #fff;
     border: 1px solid #fff;
     padding: 5px 15px;
-    border-radius: 50px;
+    border-radius: 10px;
     top: -3px;
     margin-left: .5rem;
     position: relative;

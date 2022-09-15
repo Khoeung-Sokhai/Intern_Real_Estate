@@ -14,6 +14,9 @@ use App\Http\Controllers\admin\ContactAdminController;
 
 //agent dashboard
 use App\Http\Controllers\agent\PostController;
+use App\Http\Controllers\agent\PostSaleController;
+use App\Http\Controllers\agent\PostRentController;
+use App\Http\Controllers\agent\PostRentalController;
 use App\Http\Controllers\agent\ContactAgentController;
 
 //frontend
@@ -136,6 +139,9 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
     Route::resource('/manager/contacts', ContactAgentController::class);
     Route::resource('/manager/posts', PostController::class);
+    Route::resource('/manager/sales', PostSaleController::class);
+    Route::resource('/manager/rents', PostRentController::class);
+    Route::resource('/manager/rentals', PostRentalController::class);
     Route::get('manager/property-image/{property_id}/deleteimage', [PostController::class, 'deleteimage']);
    
 });

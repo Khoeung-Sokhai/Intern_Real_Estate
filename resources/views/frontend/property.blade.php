@@ -210,10 +210,22 @@
                                                 <!-- homes img -->
                                                 <a href="{{ route('detailall.show', $property->id) }}" class="homes-img">
                                                     <div class="homes-tag button alt featured">Featured</div>
-
-
-                                                 
-                                                    <div class="homes-tag button alt sale">Types
+                                                    <div class="homes-tag  button alt sale">
+                                                        @foreach($property->types as  $type)
+                                                        @if($type == 'Rent')
+                                                        <span class="category-tag text-light">  
+                                                            {{ $type }}
+                                                        </span>
+                                                        @elseif($type == 'Sale')
+                                                            <span class=" category-tag text-light"> 
+                                                                {{ $type }}
+                                                            </span>
+                                                        @elseif($type == 'Rental')
+                                                            <span class="category-tag text-light"> 
+                                                                {{ $type }}
+                                                            </span>
+                                                        @endif
+                                                        @endforeach
                                                     </div>
                                                     {{-- <div class="homes-price"> ${{ $property->price_ }}.00/month
                                                     </div> --}}

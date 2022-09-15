@@ -14,9 +14,13 @@ class Post extends Model
         'bedroom',
         'bathroom',
         'size',
-        'price',
+        'price_sale',
+        'price_rent',
+        'price_rental',
         'cover',
         'description',
+        'agent_id',
+        'amenity',
         
         'types'
     ];

@@ -70,7 +70,7 @@
                                         <li class="fa fa-map-marker"></li> {{ $post->address }}
                                     </div>
                                 </div>
-                                <div class="product-price-discount"><span>${{ $post->price_sale }}.00</span>
+                                <div class="product-price-discount"><span>${{ $post->price_Sale }}.00</span>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -103,9 +103,9 @@
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-12 mb-3">
-                                        <strong for="size">AMENITY</strong>
+                                        <strong for="size">{{$post->amenity}}</strong>
                                     </div>
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <span for="size">Pool</span>
                                         <div class="reviews-counter">
                                             <strong class="rate">Yes</strong>
@@ -122,7 +122,7 @@
                                         <div class="reviews-counter">
                                             <strong class="rate">Yes</strong>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 {{-- <div class="product-count">
                                 <label for="size">Quantity</label>

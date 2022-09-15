@@ -63,33 +63,46 @@
                         </div>
                     </div>
                     <div class="row mb-3">
+                        {{-- <div class="row">
+                            <label for="types[]">Reselect Type</label>
+                            <div class="col-sm-4">
+                                <input type="checkbox" name="types[]" value="Sale"> For Sale 
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="checkbox" name="types[]" value="Rent">For Rent 
+                            </div>
+                            <div class="col-sm-4">
+                                <!-- select -->
+                                <input type="checkbox" name="types[]" value="Rental">For Rental 
+                            </div>
+                        </div> --}}
                         <label for="types[]">Type</label>
                         <div class="col-sm-4">
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input class="form-check-input" type="checkbox" name="types[]" value="Sale" id="flexCheckChecked"
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Sale</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_sale }}"
-                                name="price_sale" id="exampleInputName1" placeholder="Price">
+                                name="price_Sale" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input class="form-check-input" type="checkbox" name="types[]" value="Rent" id="flexCheckChecked"
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_rent }}"
-                                name="price_rent" id="exampleInputName1" placeholder="Price">
+                                name="price_Rent" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                <input class="form-check-input" type="checkbox" name="types[]" value="Rental" id="flexCheckChecked"
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
                             <input type="text" class="form-control" value="{{ $properties->price_rental }}"
-                                name="price_rental" id="exampleInputName1" placeholder="Price">
+                                name="price_Rental" id="exampleInputName1" placeholder="Price">
                         </div>
                     </div>
                     <!-- select -->

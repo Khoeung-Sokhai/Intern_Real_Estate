@@ -21,10 +21,10 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="slider" class="owl-carousel product-slider " >
+                        <div id="slider" class="owl-carousel product-slider ">
                             <div class="item text-center">
-                                <img src="{{ asset('/cover/' . $property->cover) }}" class="rounded img-responsive" alt=""
-                                    srcset="">
+                                <img src="{{ asset('/cover/' . $property->cover) }}" class="rounded img-responsive"
+                                    alt="" srcset="">
                             </div>
 
                             {{-- <div class="item">
@@ -36,21 +36,21 @@
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
                             </div> --}}
                             @foreach ($property->images as $img)
-                            <div class="item text-center">
-                                <img src="{{ asset('/property/' . $img->image) }}" class="rounded img-responsive" alt=""
-                                    srcset="">
-                            </div>
-                             @endforeach
+                                <div class="item text-center">
+                                    <img src="{{ asset('/property/' . $img->image) }}" class="rounded img-responsive"
+                                        alt="" srcset="">
+                                </div>
+                            @endforeach
                         </div>
                         <div id="thumb" class="owl-carousel product-thumb">
                             <div class="item text-center">
-                                <img src="{{ asset('/cover/' . $property->cover) }}" class=" rounded img-responsive" alt=""
-                                    srcset="">
+                                <img src="{{ asset('/cover/' . $property->cover) }}" class=" rounded img-responsive"
+                                    alt="" srcset="">
                             </div>
                             @foreach ($property->images as $img)
                                 <div class="item text-center">
-                                    <img src="{{ asset('/property/' . $img->image) }}" class=" rounded img-responsive" alt=""
-                                        srcset="">
+                                    <img src="{{ asset('/property/' . $img->image) }}" class=" rounded img-responsive"
+                                        alt="" srcset="">
                                 </div>
                             @endforeach
 
@@ -71,8 +71,46 @@
                                         <li class="fa fa-map-marker"></li> {{ $property->address }}
                                     </div>
                                 </div>
-                                <div class="product-price-discount"><span>${{ $property->price_Sale }}.00</span>
+                                <div class="product-price-discount">
+                                    <div class="row mb-4">
+                                        @foreach ($property->types as $type)
+                                            @if ($type == 'Rent')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-warning"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $property->price_Rent }}</strong>
+                                                    </div>
+                                                </div>
+                                            @elseif($type == 'Sale')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-danger"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $property->price_Sale }}</strong>
+                                                    </div>
+                                                </div>
+                                            @elseif($type == 'Rental')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-primary"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $property->price_Rental }}</strong>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 </div>
+
+
+
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut
                                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -107,23 +145,10 @@
                                         <strong for="size">AMENITY</strong>
                                     </div>
                                     <div class="col-md-4">
-                                        <span for="size">Pool</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
+                                        <span for="size">{{ $property->size }}</span>
+
                                     </div>
-                                    <div class="col-md-4">
-                                        <span for="color">Parking</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <span for="color">Internet</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 {{-- <div class="product-count">
                                 <label for="size">Quantity</label>

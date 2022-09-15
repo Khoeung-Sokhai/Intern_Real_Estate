@@ -137,9 +137,9 @@
                                     <!-- homes content -->
                                     <div class="homes-content">
                                         <!-- homes address -->
-                                        <h3><a href="/detail">{{$property->name}}</a></h3>
+                                        <h3><a href="{{ route('detail.show', $property->id)}}">{{$property->name}}</a></h3>
                                         <p class="homes-address mb-3">
-                                            <a href="/detail">
+                                            <a href="{{ route('detail.show', $property->id)}}">
                                                 <i class="fa fa-map-marker"></i><span>{{$property->address}}</span>
                                             </a>
                                         </p>
@@ -161,7 +161,7 @@
                                         <!-- Price -->
                                         <div class="price-properties">
                                             <h3 class="title mt-3">
-                                                <a href="/detail">$ {{$property->price_Sale}}.00</a>
+                                                <a href="{{ route('detail.show', $property->id)}}">$ {{$property->price_Sale}}.00</a>
                                             </h3>
                                             <div class="compare">
                                                 <a href="#" title="Share">
@@ -225,9 +225,9 @@
                                     <!-- homes content -->
                                     <div class="homes-content">
                                         <!-- homes address -->
-                                        <h3><a href="{{ route('detail.show', $property->id)}}">{{$property->name}}</a></h3>
+                                        <h3><a href="{{ route('detailrent.show', $property->id)}}">{{$property->name}}</a></h3>
                                         <p class="homes-address mb-3">
-                                            <a href="{{ route('detail.show', $property->id)}}">
+                                            <a href="{{ route('detailrent.show', $property->id)}}">
                                                 <i class="fa fa-map-marker"></i><span>{{$property->address}}</span>
                                             </a>
                                         </p>
@@ -249,7 +249,7 @@
                                         <!-- Price -->
                                         <div class="price-properties">
                                             <h3 class="title mt-3">
-                                                <a href="{{ route('detail.show', $property->id)}}">$ {{$property->price_Rent}}.00</a>
+                                                <a href="{{ route('detailrent.show', $property->id)}}">$ {{$property->price_Rent}}.00</a>
                                             </h3>
                                             <div class="compare">
                                                 <a href="#" title="Share">

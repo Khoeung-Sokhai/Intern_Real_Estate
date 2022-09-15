@@ -24,13 +24,13 @@
                         @foreach($properties as $property)
                         <div class="col-lg-4 col-md-12 col-xs-12 mt-4">
                             <div class="news-item">
-                                <a href="/detail" class="news-img-link">
+                                <a href="{{ route('detailall.show', $property->id) }}" class="news-img-link">
                                     <div class="news-item-img">
                                         <img class="img-responsive" src="{{asset('/cover/' . $property->cover) }}" style="height:250px; width:1000px" alt="blog image" >
                                     </div>
                                 </a>    
                                 <div class="news-item-text">
-                                    <a href="/detail"><h3>{{$property->name}}</h3></a>
+                                    <a href="{{ route('detailall.show', $property->id) }}"><h3>{{$property->name}}</h3></a>
                                     <div class="dates">
                                         <span class="date">{{$property->created_at->todatestring()}} &nbsp;/</span>
                                         <ul class="action-list pl-0">
@@ -43,7 +43,7 @@
                                         {{$property->description}}
                                     </div>
                                     <div class="news-item-bottom">
-                                        <a href="blog-details.html" class="news-link">Read more...</a>
+                                        <a href="{{ route('detailall.show', $property->id) }}" class="news-link">See more...</a>
                                         <div class="admin">
                                            
                                                 

@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Property;
 use App\Models\Image;
-use App\Models\Post;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-class PostController extends Controller
+class PostSaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $properties= Property::where('agent_id','=', Auth::user()->id)->paginate(6);
-        return view('agent.posts.index', compact('properties'));
+        $properties= Property::where('agent_id','=', Auth::user()->id)->whereJsonContains('types', ['Sale'])->paginate(6);
+        return view('agent.types.sales.index', compact('properties'));
     }
     public function create()
     {
@@ -54,7 +54,7 @@ class PostController extends Controller
                 "price_rental" => $request->price_rental,
                 
                 "cover" => $imageName,
-                "types" => $request->types,
+                //"types" => $request->types,
                 "description" => $request->description,
                 "agent_id" => $request->agent_id,
                 "amenity" => $request->amenity,

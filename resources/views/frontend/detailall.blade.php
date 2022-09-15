@@ -50,33 +50,32 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="single detail-wrapper mr-2">
-                                                <div class="detail-wrapper-body">
+                                            <div class="detail-wrapper mr-2">
                                                     <div class="listing-title-bar">
-                                                    <h3>
+                                                    <h3 class="ml-2">Prices</h3>
                                                         @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
                                                        
-                                                        <span class="mrg-l-5 category-tag bg-danger" style="font-size: 15px; color:white; " > 
+                                                        <span class="category-tag bg-danger" style="font-size: 15px; color:white; " > 
                                                             ${{ $data->price_Sale }}
                                                         </span>
                                                            
                                                         @endif
                                                         @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
                                                         
-                                                        <span class="mrg-l-5 category-tag bg-warning" style="font-size: 15px; color:white; ">  
+                                                        <span class="category-tag bg-warning" style="font-size: 15px; color:white; ">  
                                                             ${{ $data->price_Rent }}
                                                         </span>
                                                         @endif
                                                         @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])
                                                       
-                                                        <span class="mrg-l-5 category-tag bg-primary" style="font-size: 15px; color:white;" > 
+                                                        <span class="category-tag bg-primary" style="font-size: 15px; color:white;" > 
                                                             ${{ $data->price_Rental }}
                                                         </span>
                                                         @endif
                                                     
-                                                    </h3>
+                                                    
                                                     </div>
-                                                </div>
+                                                
                                             </div>
                                             
                                             
@@ -168,7 +167,7 @@
                                         <h5 class="mt-5">Properties Type</h5>
                                         <!-- cars List -->
                                         <ul class="homes-list clearfix">
-                                            <span class="font-weight-bold mr-1">Price For Rental:</span> 
+                                            <span class="font-weight-bold mr-1">Property Types:</span> 
                                                
                                             
                                                 {{-- <i class="fa fa-check-square" aria-hidden="true"></i> --}}

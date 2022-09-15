@@ -56,7 +56,9 @@
                                 <th class="text-center">
                                     Address
                                 </th>
-                                
+                                <th class="text-center">
+                                    Prices
+                                </th>
                                 <th class="text-center">
                                     Types
                                 </th>
@@ -76,15 +78,15 @@
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            @php $i=1; @endphp
+                            <?php{{ $number = $properties->firstItem()}};?>
                             
                             @foreach ($properties as $key =>$property)
-                            
+                            @if($property->types == ["Rent"] || $property->types == ["Sale", "Rent"] || $property->types == ["Rent", "Rental"] || $property->types == ["Sale","Rent","Rental"] )
                                 <tr>
                                     <td class="text-center">
                                         <a>
                                             
-                                            {{$key+$properties->firstItem()}}
+                                            {{ $number++}}
                                             
                                         </a>
                                     </td>
@@ -106,26 +108,18 @@
                                             {{ $property->address }}
                                         </a>
                                     </td>
-                                    
+                                    <td class="text-center">
+                                        <a>
+                                            ${{ $property->price_Rent }}.00
+                                        </a>
+                                    </td>
                                     <td class="text-center">
                                         {{--  --}}
-                                        @foreach($property->types as $type)
-                                        @if($type == 'Rent')
-                                        <span class="badge badge-success bg-warning" style="font-size: 15px; color:white; " > 
-                                            {{ $type }}
-                                        </span>
-                                         @elseif($type == 'Sale')
-                                        <span class="badge badge-success bg-danger" style="font-size: 15px; color:white; " > 
-                                            {{ $type }}
-                                        </span>
-                                         @elseif($type == 'Rental')
-                                        <span class="badge badge-success bg-primary" style="font-size: 15px; color:white;" > 
-                                            {{ $type }}
-                                        </span>
-                                        @endif
+                                        <span class="badge badge-success" style="font-size: 15px; " > 
                                             
+                                           Rent
                                            
-                                        @endforeach
+                                        </span>
                                     </td>
                                     <td class="text-center">
                                         <img src="{{asset('/cover/' . $property->cover) }}" class="img-responsive" style="max-height:50px; max-width:80px" alt="" srcset="">
@@ -158,7 +152,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                                
+                               @endif 
                             @endforeach
                         </tbody>
                     </table>
