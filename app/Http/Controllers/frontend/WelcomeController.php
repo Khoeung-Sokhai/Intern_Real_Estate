@@ -15,7 +15,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $properties = Property::orderByDesc('id')->take(10)->orderBy('id')->get();
+        $properties = Property::orderByDesc('id')->take(7)->orderBy('id')->get();
         $phnom_penh = Property::where('address','=','Phnom Penh')->count();
         $sihano = Property::where('address','=','Sihano')->count();
         $siem_reab = Property::where('address','=','Siem Reab')->count();

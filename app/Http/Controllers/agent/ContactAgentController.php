@@ -17,7 +17,7 @@ class ContactAgentController extends Controller
      */
     public function index()
     {
-        $contacts = ContactAgent::where('agent_id','=', Auth::user()->id)->paginate(6);
+        $contacts = ContactAgent::where('agent_id','=', Auth::user()->id)->orderBy('id','desc')->paginate(6);
 
         return view('agent.contacts.index',compact('contacts'));
     }

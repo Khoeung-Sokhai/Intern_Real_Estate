@@ -1,7 +1,7 @@
 
 @extends('layouts.layout')
 @section('content')
-@if (Auth::check())
+
     <body class="inner-pages sin-1 homepage-4 hd-white">
         <!-- Wrapper -->
         <div id="wrapper">
@@ -27,7 +27,7 @@
                                                     <span class="mrg-l-5 category-tag">  
                                                        For Rent
                                                     </span>
-                                                  
+                                                    
                                                     </h3>
                                                     <div class="mt-1">
                                                         <a href="#listing-location" class="listing-address">
@@ -68,7 +68,7 @@
 
 
 
-                                                    <img src="{{ asset('/images/' . $img->image) }}"
+                                                    <img src="{{ asset('/property/' . $img->image) }}"
                                                         style="width:1000px; height:500px" class="img-fluid"
                                                         alt="listing-small">
 
@@ -102,10 +102,12 @@
                                                 </li>
                                             @endforeach
 
-                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider"
-                                            data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i
-                                                class="fa fa-angle-right"></i></a>
+                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev">
+                                            <i class="fa fa-angle-left"  style="color:white; "></i>
+                                        </a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next">
+                                            <i class="fa fa-angle-right" style="color:white; "></i>
+                                        </a>
                                         <!-- main slider carousel items -->
                                     </div>
                                     <div class="blog-info details mb-30">
@@ -118,6 +120,24 @@
                                 <!-- title -->
                                 <h5 class="mb-4">Property Details</h5>
                                 <ul class="homes-list clearfix">
+                                    
+                                    {{-- @if($data->types == ["Rent"] || $data->types == ["Sale", "Rent"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"])                                   
+                                    <li>
+                                        <span class="font-weight-bold mr-1">Price For Rent:</span> 
+                                    
+                                        <span class="det">${{ $data->price_rent }}</span>
+                                    </li>
+                                    @endif
+
+                                    @if($data->types == ["Sale"] || $data->types == ["Sale", "Rental"] || $data->types == ["Sale", "Rent"] || $data->types == ["Sale","Rent","Rental"])
+                                    <li>
+                                        <span class="font-weight-bold mr-1">Price For Sale:</span> 
+                                       
+                                        <span class="det">${{ $data->price_sale }}</span>
+                                    </li> 
+                                    @endif --}}
+
+                                    {{-- @if($data->types == ["Rental"] || $data->types == ["Sale", "Rental"] || $data->types == ["Rent", "Rental"] || $data->types == ["Sale","Rent","Rental"]) --}}
                                     <li>
                                         <span class="font-weight-bold mr-1">Property ID:</span> 
                                    
@@ -127,7 +147,10 @@
                                         <span class="font-weight-bold mr-1">Price For Rent:</span> 
                                    
                                       <span class="det">${{ $data->price_Rent }}</span> 
-                                    </li>
+                                    </li>    
+                                    
+                                   
+
                                     <li>
                                         <span class="font-weight-bold mr-1">Rooms:</span>
                                         <span class="det">{{ $data->bedroom }}</span>
@@ -252,9 +275,12 @@
                                                             <textarea class="form-control textarea-custom input-full" id="ccomment" name="message" required rows="8"
                                                                 placeholder="Message"></textarea>
                                                         </div>
-
+                                                        {{-- @if (Auth::check()) --}}
                                                         <button type="submit" id="submit-contact"
                                                             class="btn btn-primary btn-lg">Submit</button>
+                                                        {{-- @else
+                                                             @include('auth.login')
+                                                        @endif --}}
                                                     </form>
                                                 </div>
                                             </div>
@@ -272,8 +298,8 @@
             </section>
             <!-- END SECTION PROPERTIES LISTING -->
 
-            @else
-            @include('auth.login')
+            
+            
            
             <!--register form -->
 
@@ -330,7 +356,7 @@
         </div>
         <!-- Wrapper / End -->
     </body>
-@endif
+
 
     <!-- Mirrored from code-theme.com/html/findhouses/single-property-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 08:55:08 GMT -->
 @endsection

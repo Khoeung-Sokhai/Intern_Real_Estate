@@ -40,7 +40,7 @@
                 <p>{{ $message }}</p>
             </div>
             @endif
-            <div class="card-body p-0">
+            <div class="card-body p-0" style="height: 500px">
                 <table id="example2" class="table table-bordered table-hover table-striped projects">
                     <thead>
                         <tr>
@@ -146,7 +146,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <p>{!! $contacts->links() !!}</p>
+                 <div style="position: absolute; bottom: 0px">{!! $contacts->links() !!}</div>
             </div>
             <!-- /.card-body -->
         </div>

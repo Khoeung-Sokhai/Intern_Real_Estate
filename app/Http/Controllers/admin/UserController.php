@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         
-        $users = User::paginate(5);
+        $users = User:: where('type','=', 0)->orderBy('id','desc')->paginate(7);
         return view('backend.users.index',compact('users'));
     }
 

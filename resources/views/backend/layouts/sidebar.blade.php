@@ -50,20 +50,46 @@
                             </p>
                         </a>
                     </li> --}}
-            <li class="nav-item">
-                <a href="/admin/users" class="nav-link">
-                    <i class="nav-icon bi bi-people text-white"></i>
-                    <p class="text-white">
-                        User Management
-                    </p>
-                </a>
-            </li>
+           
+        
             
            
 
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon bi bi-code-square text-white"></i>
+                    <i class="nav-icon bi bi-people text-white"></i>
+                    <p class="text-white">
+                       Users Mangement
+                        <i class="right fas fa-angle-left text-white mt-2"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/admin/users" class="nav-link">
+                            <i class="far fa-circle nav-icon text-white"></i>
+                            <p class="text-white">
+                               List Customers
+        
+                            </p>
+        
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/managers" class="nav-link">
+                            <i class="far fa-circle nav-icon text-white"></i>
+                            <p class="text-white">List Managers</p>
+                        </a>
+                    </li>
+
+
+                    
+
+                    
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-house-door text-white"></i>
                     <p class="text-white">
                         Type Property
                         <i class="right fas fa-angle-left text-white mt-2"></i>

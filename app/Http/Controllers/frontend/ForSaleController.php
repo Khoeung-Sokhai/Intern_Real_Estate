@@ -15,7 +15,7 @@ class ForSaleController extends Controller
      */
     public function index()
     {
-        $properties = Property::orderByDesc('id')->orderBy('id')->paginate(6);
+        $properties = Property::whereJsonContains('types', ['Sale'])->paginate(6);
         return view('frontend.propertySale',compact('properties'));
     }
 

@@ -1,7 +1,7 @@
 
 @extends('layouts.layout')
 @section('content')
-@if (Auth::check())
+
     <body class="inner-pages sin-1 homepage-4 hd-white">
         <!-- Wrapper -->
         <div id="wrapper">
@@ -102,10 +102,12 @@
                                                 </li>
                                             @endforeach
 
-                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider"
-                                            data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i
-                                                class="fa fa-angle-right"></i></a>
+                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev">
+                                            <i class="fa fa-angle-left"  style="color:white; "></i>
+                                        </a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next">
+                                            <i class="fa fa-angle-right" style="color:white; "></i>
+                                        </a>
                                         <!-- main slider carousel items -->
                                     </div>
                                     <div class="blog-info details mb-30">
@@ -273,9 +275,12 @@
                                                             <textarea class="form-control textarea-custom input-full" id="ccomment" name="message" required rows="8"
                                                                 placeholder="Message"></textarea>
                                                         </div>
-
+                                                        {{-- @if (Auth::check()) --}}
                                                         <button type="submit" id="submit-contact"
                                                             class="btn btn-primary btn-lg">Submit</button>
+                                                        {{-- @else
+                                                             @include('auth.login')
+                                                        @endif --}}
                                                     </form>
                                                 </div>
                                             </div>
@@ -293,8 +298,8 @@
             </section>
             <!-- END SECTION PROPERTIES LISTING -->
 
-            @else
-            @include('auth.login')
+            
+            
            
             <!--register form -->
 
@@ -351,7 +356,7 @@
         </div>
         <!-- Wrapper / End -->
     </body>
-@endif
+
 
     <!-- Mirrored from code-theme.com/html/findhouses/single-property-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 08:55:08 GMT -->
 @endsection

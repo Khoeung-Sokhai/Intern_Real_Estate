@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 //admin dashboard
 use App\Http\Controllers\admin\PropertyController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\ManagerController;
 
 use App\Http\Controllers\admin\RentController;
 use App\Http\Controllers\admin\SaleController;
@@ -77,6 +78,7 @@ Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.st
 // Route::post('/detailrent', [DetailRentController::class, 'store'])->name('detailrent.store');
 
 Route::resource('/detail', DetailController::class);
+
 Route::resource('/detailrent', DetailRentController::class);
 Route::resource('/detailrental', DetailRentalController::class);
 Route::resource('/detailall', DetailAllController::class);
@@ -115,6 +117,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::resource('/admin/properties', PropertyController::class);
     Route::resource('/admin/users', UserController::class);
+    Route::resource('/admin/managers', ManagerController::class);
     Route::resource('/admin/rents', RentController::class);
     Route::resource('/admin/sales', SaleController::class);
     Route::resource('/admin/rentals', RentalController::class);

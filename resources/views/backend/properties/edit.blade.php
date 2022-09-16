@@ -21,10 +21,10 @@
                         <input type="text" class="form-control" name="amenity" id="exampleInputName1" value="{{ $properties->amenity }}"
                             placeholder="">
                     </div>
-                    <div class="form-group" >
+                    <div class="form-group" hidden >
                         <label for="agent_id">Agent_id</label>
                         <input type="text" class="form-control" name="agent_id" id="exampleInputName1" value="{{ $properties->agent->id }}"
-                            placeholder="">
+                            placeholder="" >
                     </div>
                     <div class="form-group">
                         <label for="name">Name Property</label>
@@ -83,7 +83,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Sale</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_sale }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Sale }}"
                                 name="price_Sale" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
@@ -92,7 +92,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_rent }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Rent }}"
                                 name="price_Rent" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
@@ -101,7 +101,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_rental }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Rental }}"
                                 name="price_Rental" id="exampleInputName1" placeholder="Price">
                         </div>
                     </div>

@@ -18,7 +18,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $properties = Property::whereJsonContains('types', ['Sale'])->paginate(6);
+        $properties = Property::whereJsonContains('types', ['Sale'])->orderBy('id','desc')->paginate(6);
         return view('backend.types.sales.index', compact('properties'))->with('properties', $properties);
     }
 

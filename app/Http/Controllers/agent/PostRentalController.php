@@ -20,7 +20,7 @@ class PostRentalController extends Controller
      */
     public function index()
     {
-        $properties= Property::where('agent_id','=', Auth::user()->id)->whereJsonContains('types', ['Rental'])->paginate(6);
+        $properties= Property::where('agent_id','=', Auth::user()->id)->whereJsonContains('types', ['Rental'])->orderBy('id','desc')->paginate(6);
         return view('agent.types.rentals.index', compact('properties'));
     }
     public function create()

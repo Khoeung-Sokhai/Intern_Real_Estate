@@ -9,7 +9,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/manager">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </div><!-- /.col -->
@@ -18,12 +18,13 @@
         </div>
         <div class="pd-wrap mt-3">
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="slider" class="owl-carousel product-slider " style="max-height: 400px; overflow:hidden;">
-                            <div class="item">
-                                <img src="{{ asset('/cover/' . $post->cover) }}" alt=""
-                                    srcset="">
+                        <div id="slider" class="owl-carousel product-slider ">
+                            <div class="item text-center">
+                                <img src="{{ asset('/cover/' . $post->cover) }}" class="rounded img-responsive"
+                                    alt="" srcset="">
                             </div>
 
                             {{-- <div class="item">
@@ -35,21 +36,21 @@
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
                             </div> --}}
                             @foreach ($post->images as $img)
-                            <div class="item">
-                                <img src="{{ asset('/property/' . $img->image) }}" class="img-responsive" alt=""
-                                    srcset="">
-                            </div>
-                             @endforeach
+                                <div class="item text-center">
+                                    <img src="{{ asset('/property/' . $img->image) }}" class="rounded img-responsive"
+                                        alt="" srcset="">
+                                </div>
+                            @endforeach
                         </div>
                         <div id="thumb" class="owl-carousel product-thumb">
-                            <div class="item">
-                                <img src="{{ asset('/cover/' . $post->cover) }}" class="img-responsive" alt=""
-                                    srcset="">
+                            <div class="item text-center">
+                                <img src="{{ asset('/cover/' . $post->cover) }}" class=" rounded img-responsive"
+                                    alt="" srcset="">
                             </div>
                             @foreach ($post->images as $img)
-                                <div class="item">
-                                    <img src="{{ asset('/property/' . $img->image) }}" class="img-responsive" alt=""
-                                        srcset="">
+                                <div class="item text-center">
+                                    <img src="{{ asset('/property/' . $img->image) }}" class=" rounded img-responsive"
+                                        alt="" srcset="">
                                 </div>
                             @endforeach
 
@@ -70,8 +71,46 @@
                                         <li class="fa fa-map-marker"></li> {{ $post->address }}
                                     </div>
                                 </div>
-                                <div class="product-price-discount"><span>${{ $post->price_Sale }}.00</span>
+                                <div class="product-price-discount">
+                                    <div class="row mb-4">
+                                        @foreach ($post->types as $type)
+                                            @if ($type == 'Rent')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-warning"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $post->price_Rent }}</strong>
+                                                    </div>
+                                                </div>
+                                            @elseif($type == 'Sale')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-danger"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $post->price_Sale }}</strong>
+                                                    </div>
+                                                </div>
+                                            @elseif($type == 'Rental')
+                                                <div class="col-md-4">
+                                                    <span class="badge badge-success bg-primary"
+                                                        style="font-size: 15px; color:white; ">
+                                                        {{ $type }}
+                                                    </span>
+                                                    <div class="reviews-counter ml-2">
+                                                        <strong class="rate">${{ $post->price_Rental }}</strong>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 </div>
+
+
+
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut
                                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -103,26 +142,13 @@
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-12 mb-3">
-                                        <strong for="size">{{$post->amenity}}</strong>
-                                    </div>
-                                    {{-- <div class="col-md-4">
-                                        <span for="size">Pool</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
+                                        <strong for="size">AMENITY</strong>
                                     </div>
                                     <div class="col-md-4">
-                                        <span for="color">Parking</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
+                                        <span for="size">{{ $post->amenity }}</span>
+
                                     </div>
-                                    <div class="col-md-4">
-                                        <span for="color">Internet</span>
-                                        <div class="reviews-counter">
-                                            <strong class="rate">Yes</strong>
-                                        </div>
-                                    </div> --}}
+
                                 </div>
                                 {{-- <div class="product-count">
                                 <label for="size">Quantity</label>
@@ -151,9 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
-                </div>
+                <a class="btn btn-primary" href="{{ route('properties.index') }}"> Back</a>
             </div>
         </div>
     </div>

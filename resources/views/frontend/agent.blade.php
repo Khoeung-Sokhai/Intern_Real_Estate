@@ -136,7 +136,7 @@
                                                 
                                                 <div> Phone: +855 {{ $user->phone }} </div>
                                                
-                                                <div>Email: {{ $user->email }} </div>
+                                                <div class="mt-1">Email: {{ $user->email }} </div>
                                                 <div class="team-socials">
                                                     <ul>
                                                         <li>

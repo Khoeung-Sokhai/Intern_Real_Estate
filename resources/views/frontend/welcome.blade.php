@@ -20,7 +20,7 @@
                             <h1>The best way to find your dream home</h1>
                             <p>With over 400,000 active listings, FindHouses has the largest inventory of apartments in
                                 the United States..</p>
-                            <a href="submit-property.html" class="btn-white">Get Started</a>
+                            <a href="#" class="btn-white">Get Started</a>
                         </div>
                     </div>
                     <div class="col-lg-6 google-maps home-18" data-aos="fade-left">
@@ -215,7 +215,7 @@
                                             <a href="{{ route('detailrent.show', $property->id)}}" class="homes-img">
                                                 <div class="homes-tag button alt featured">Featured</div>
                                                 <div class="homes-tag button sale rent">For Rent</div>
-                                                <div class="homes-price">Family Home</div>
+                                                
                                                 <div class="news-item-img">
                                                     <img class="img-responsive" src="{{asset('/cover/' . $property->cover) }}" style="height:250px; width:1000px" alt="blog image" >
                                                 </div>
@@ -338,7 +338,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 pr-1" data-aos="fade-right">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box hover-effect">
+                        <a href="#" class="img-box hover-effect">
                             <img src="images/popular-places/7.jpg" class="img-responsive" alt="">
                             <!-- Badge -->
                             <div class="img-box-content visible">
@@ -361,7 +361,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 pr-1" data-aos="fade-left">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box hover-effect">
+                        <a href="#" class="img-box hover-effect">
                             <img src="images/popular-places/8.jpg" class="img-responsive" alt="">
                             <div class="img-box-content visible">
                                 <h4 class="mb-2">Sihano</h4>
@@ -383,7 +383,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 pr" data-aos="fade-left">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box hover-effect">
+                        <a href="#" class="img-box hover-effect">
                             <img src="images/popular-places/9.jpg" class="img-responsive" alt="">
                             <div class="img-box-content visible">
                                 <h4 class="mb-2">Siem reab </h4>
@@ -405,7 +405,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 pr-1" data-aos="fade-right">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box no-mb mi x3 hover-effect">
+                        <a href="#" class="img-box no-mb mi x3 hover-effect">
                             <img src="images/popular-places/10.jpg" class="img-responsive" alt="">
                             <div class="img-box-content visible">
                                 <h4 class="mb-2">Batambang</h4>
@@ -427,7 +427,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 pr-1" data-aos="fade-right">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box no-mb mi x3 hover-effect">
+                        <a href="#" class="img-box no-mb mi x3 hover-effect">
                             <img src="images/popular-places/11.jpg" class="img-responsive" alt="">
                             <div class="img-box-content visible">
                                 <h4 class="mb-2">Kompongcham</h4>
@@ -449,7 +449,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 pr" data-aos="fade-left">
                         <!-- Image Box -->
-                        <a href="listing-details.html" class="img-box san no-mb x3 hover-effect">
+                        <a href="#" class="img-box san no-mb x3 hover-effect">
                             <img src="images/popular-places/5.jpg" class="img-responsive" alt="">
                             <div class="img-box-content visible">
                                 <h4 class="mb-2">Kompot </h4>

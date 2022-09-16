@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $properties= Property::where('agent_id','=', Auth::user()->id)->paginate(6);
+        $properties= Property::where('agent_id','=', Auth::user()->id)->orderBy('id','desc')->paginate(6);
         return view('agent.posts.index', compact('properties'));
     }
     public function create()

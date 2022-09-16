@@ -128,10 +128,12 @@
                                                 </li>
                                             @endforeach
 
-                                        </ul> <a class="carousel-control left" href="#listingDetailsSlider"
-                                            data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i
-                                                class="fa fa-angle-right"></i></a>
+                                        </ul><a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev">
+                                            <i class="fa fa-angle-left"  style="color:white; "></i>
+                                        </a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next">
+                                            <i class="fa fa-angle-right" style="color:white; "></i>
+                                        </a>
                                         <!-- main slider carousel items -->
                                     </div>
                                     <div class="single homes-content details mb-30">

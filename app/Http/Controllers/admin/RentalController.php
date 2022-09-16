@@ -19,7 +19,7 @@ class RentalController extends Controller
     public function index()
     {
         
-        $properties = Property::whereJsonContains('types', ['Rental'])->paginate(6);
+        $properties = Property::whereJsonContains('types', ['Rental'])->orderBy('id','desc')->paginate(6);
        
         return view('backend.types.rentals.index', compact('properties'))->with('properties', $properties);
     }
