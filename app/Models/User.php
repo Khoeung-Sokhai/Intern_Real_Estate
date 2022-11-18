@@ -28,8 +28,6 @@ class User extends Authenticatable
         'type',
         'phone',
         'avatar',
-        
-        
     ];
 
     public function properties ()

@@ -6,8 +6,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-        <div class="card card-primary">
-            <div class="card-header">
+        <div class="card card-primary ">
+            <div class="card-header bg-dark">
                 <h3 class="card-title text-center">Edit Property</h3>
             </div>
             <!-- /.card-header -->
@@ -83,7 +83,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Sale</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_sale }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Sale }}"
                                 name="price_Sale" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
@@ -92,7 +92,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_rent }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Rent }}"
                                 name="price_Rent" id="exampleInputName1" placeholder="Price">
                         </div>
                         <div class="col-sm-4">
@@ -101,7 +101,7 @@
                                     checked>
                                 <label class="form-check-label" for="flexCheckChecked">For Rent</label>
                             </div>
-                            <input type="text" class="form-control" value="{{ $properties->price_rental }}"
+                            <input type="text" class="form-control" value="{{ $properties->price_Rental }}"
                                 name="price_Rental" id="exampleInputName1" placeholder="Price">
                         </div>
                     </div>
@@ -156,8 +156,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a class="btn btn-primary bg-dark" href="{{ route('posts.index') }}"> Back</a>
+                    <button type="submit" class="btn btn-primary bg-dark">Create</button>
                 </div>
             </form>
         </div>

@@ -1,6 +1,6 @@
-<aside class="main-sidebar sidebar-primary-primary elevation-4 bg-primary">
+<aside class="main-sidebar sidebar-primary-primary elevation-4 bg-dark">
     <!-- Brand Logo -->
-    <a href="/home" class="brand-link text-center">
+    <a href="/home" class="brand-link text-center text-white">
         <span class="brand-text font-weight-bold" >MANAGER</span>
     </a>
     <!-- Sidebar -->

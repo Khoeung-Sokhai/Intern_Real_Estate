@@ -120,11 +120,7 @@
                                         <div class="project-actions text-center">
                                             <form action="{{ route('contactAdmins.destroy', $contact->id) }}"
                                                 method="POST">
-                                                <a href="{{ route('contactAdmins.edit', $contact->id) }}"
-                                                    class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
-                                                    title="Edit">
-                                                    <i class="fas fa-pencil-alt"></i> Edit
-                                                </a>
+                                               
                                                 
                                                 @csrf
                                                 @method('DELETE')

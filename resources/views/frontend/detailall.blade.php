@@ -1,7 +1,7 @@
 
 @extends('layouts.layout')
 @section('content')
-@if (Auth::check())
+
     <body class="inner-pages sin-1 homepage-4 hd-white">
         <!-- Wrapper -->
         <div id="wrapper">
@@ -341,8 +341,6 @@
             </section>
             <!-- END SECTION PROPERTIES LISTING -->
 
-            @else
-            @include('auth.login')
            
             <!--register form -->
 
@@ -399,7 +397,7 @@
         </div>
         <!-- Wrapper / End -->
     </body>
-@endif
+
 
     <!-- Mirrored from code-theme.com/html/findhouses/single-property-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jul 2022 08:55:08 GMT -->
 @endsection

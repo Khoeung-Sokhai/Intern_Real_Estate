@@ -121,11 +121,7 @@
                                             <form action="{{ route('contacts.destroy', $contact->id) }}"
                                                 method="POST">
                                                 
-                                                <a href="{{ route('contacts.edit', $contact->id) }}"
-                                                    class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
-                                                    title="Edit">
-                                                    <i class="fas fa-pencil-alt"></i> Edit
-                                                </a>
+                                               
                                                 @csrf
                                                 @method('DELETE')
                                                 {{-- <button type="submit" style="border: none" class="action_btn"

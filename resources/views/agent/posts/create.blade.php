@@ -5,7 +5,7 @@
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
         <div class="card card-primary">
-            <div class="card-header">
+            <div class="card-header bg-dark">
                 <h3 class="card-title">Create New Property</h3>
             </div>
             <!-- /.card-header -->
@@ -133,8 +133,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a class="btn btn-primary bg-dark" href="{{ route('posts.index') }}"> Back</a>
+                    <button type="submit" class="btn btn-primary bg-dark">Create</button>
                 </div>
             </form>
         </div>

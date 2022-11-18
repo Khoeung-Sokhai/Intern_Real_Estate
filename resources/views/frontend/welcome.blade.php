@@ -477,7 +477,7 @@
         
 
         <!-- START SECTION BLOG -->
-        <section class="blog-section bg-white-2 home18">
+        {{-- <section class="blog-section bg-white-2 home18">
             <div class="container">
                 <div class="sec-title">
                     <h2><span>Tips & </span>Articles</h2>
@@ -602,7 +602,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- END SECTION BLOG -->
 
         <!-- STAR SECTION PARTNERS -->

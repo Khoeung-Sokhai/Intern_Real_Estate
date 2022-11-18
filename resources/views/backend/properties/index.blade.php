@@ -79,7 +79,6 @@
                             @php $i=1; @endphp
                             
                             @foreach ($properties as $key =>$property)
-                            
                                 <tr>
                                     <td class="text-center">
                                         <a>
@@ -93,14 +92,6 @@
                                             {{ $property->name }}
                                         </a>
                                     </td>
-                                    {{-- <td class="text-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar"
-                                                src="{{ asset('backend/dist/img/avatar.png') }}">
-                                        </li>
-                                    </ul>
-                                </td> --}}
                                     <td class="text-center">
                                         <a>
                                             {{ $property->address }}
@@ -122,9 +113,7 @@
                                         <span class="badge badge-success bg-primary" style="font-size: 15px; color:white;" > 
                                             {{ $type }}
                                         </span>
-                                        @endif
-                                            
-                                           
+                                        @endif   
                                         @endforeach
                                     </td>
                                     <td class="text-center">
@@ -135,9 +124,6 @@
                                             {{ $property->created_at }}
                                         </a>
                                     </td>
-                                    {{-- <td class="project-state">
-                                    <span class="badge badge-success">{{ $product->status }}</span>
-                                </td> --}}
                                     <td class="project-actions text-right">
                                         <form action="{{ route('properties.destroy', $property->id) }}" method="post">
                                              @csrf
@@ -157,8 +143,7 @@
                                             </button>
                                         </form>
                                     </td>
-                                </tr>
-                                
+                                </tr>                              
                             @endforeach
                         </tbody>
                     </table>

@@ -45,7 +45,15 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
        
-
+        <style>
+            body{
+                font-family: var(--vz-body-font-family);
+                font-size: var(--vz-body-font-size);
+                font-weight: var(--vz-body-font-weight);
+                line-height: var(--vz-body-line-height);
+            }
+                
+        </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">

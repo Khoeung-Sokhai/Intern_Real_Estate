@@ -49,9 +49,9 @@ class PostController extends Controller
                 "bedroom" => $request->bedroom,
                 "bathroom" => $request->bathroom,
                 "size" => $request->size,
-                "price_sale" => $request->price_sale,
-                "price_rent" => $request->price_rent,
-                "price_rental" => $request->price_rental,
+                "price_Sale" => $request->price_Sale,
+                "price_Rent" => $request->price_Rent,
+                "price_Rental" => $request->price_Rental,
                 
                 "cover" => $imageName,
                 "types" => $request->types,

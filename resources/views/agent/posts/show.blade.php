@@ -177,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary" href="{{ route('properties.index') }}"> Back</a>
+                <a class="btn btn-primary bg-dark" href="{{ route('posts.index') }}"> Back</a>
             </div>
         </div>
     </div>
